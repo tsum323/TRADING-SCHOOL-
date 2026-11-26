@@ -1,159 +1,23 @@
-const exercises = [
-  {
-    id: "1.1",
-    title: "Бег на 100 метров",
-    description: "Кратковременное скоростное упражнение на ровной, ровной и маркированной дистанции. Старт выполняется из положения высоко или низко с последующим ускорением до финишной линии.",
-    unit: "сек",
-    mode: "lower",
-    thresholds: [13.5, 14.5, 15.5]
-  },
-  {
-    id: "1.2",
-    title: "Бег на 1 километр",
-    description: "Упражнение на выносливость с преодолением дистанции 1000 метров. Результат фиксируется по времени прохождения всей дистанции.",
-    unit: "сек",
-    mode: "lower",
-    thresholds: [210, 230, 260]
-  },
-  {
-    id: "2.1",
-    title: "Подтягивание на перекладине",
-    description: "Упражнение выполняется на перекладине хватом сверху. Засчитывается повторение с последующим разгибанием рук в висе.",
-    unit: "раз",
-    mode: "higher",
-    thresholds: [15, 12, 8]
-  },
-  {
-    id: "2.2",
-    title: "Поднимание туловища",
-    description: "Упражнение для оценки силы мышц брюшного пресса в течение установленного времени или до достижения установленного количества повторений.",
-    unit: "раз",
-    mode: "higher",
-    thresholds: [40, 32, 24]
-  },
-  {
-    id: "3.1",
-    title: "Метание гранаты",
-    description: "Спортивное метание имитационной гранаты в цель или на дальность с соблюдением техники безопасности и установленной исходной позиции.",
-    unit: "м",
-    mode: "higher",
-    thresholds: [40, 32, 24]
-  },
-  {
-    id: "3.2",
-    title: "Прыжок в длину с разбега",
-    description: "Прыжок через контрольную линию с разбега с приземлением в обозначенной зоне. Засчитывается результат с наиболее короткой дистанцией от линии отталкивания.",
-    unit: "см",
-    mode: "higher",
-    thresholds: [480, 430, 380]
-  }
+const lessons=[
+{title:"Что такое трейдинг",intro:"Что делает трейдер, откуда берётся прибыль и почему цена может пойти не туда.",blocks:[["Трейдинг — обмен с расчётом на изменение цены",["Трейдер покупает и продаёт активы, например криптовалюту, пытаясь заработать на изменении цены. Он не знает будущую цену наверняка: он оценивает ситуацию и принимает решение при неопределённости.","Купил 0,01 BTC по 60 000 USDT за BTC — потратил 600 USDT. Продал по 63 000 — получил 630 USDT. Разница до комиссий — 30 USDT. Если продал по 57 000, результат — минус 30 USDT."]],["Трейдинг и инвестирование",["Инвестор обычно держит актив месяцами или годами, рассчитывая на долгосрочный результат. Трейдер чаще работает с более короткими движениями — от минут до недель. Граница не строгая: главное различие в горизонте и подходе.","Трейдинг не означает, что нужно постоянно совершать сделки. Иногда разумнее ничего не делать, если понятной ситуации нет."]],["Кто участвует в сделке",["У каждой совершённой сделки есть покупатель и продавец. Один согласился купить по цене, на которую согласился другой. Биржа сводит их заявки и фиксирует обмен."]]],analogy:"Это похоже на покупку товара дешевле и продажу дороже. Но на бирже цена меняется постоянно, а покупатель по будущей цене не гарантирован.",q:"Купил актив за 100 USDT, продал за 110 USDT. Каков результат до комиссий?",a:["Прибыль 10 USDT","Убыток 10 USDT","Прибыль гарантирована и в следующих сделках"],ok:0,why:"Продажа прошла на 10 USDT дороже покупки. Это прибыль до комиссий, но она не гарантирует успех следующей сделки."},
+{title:"Как работает биржа",intro:"Торговые пары, стакан заявок и то, как биржа соединяет покупателя с продавцом.",blocks:[["Биржа — место, где встречаются заявки",["Криптобиржа принимает заявки пользователей купить или продать актив. Она сопоставляет совместимые заявки и фиксирует сделки.","BTC/USDT — торговая пара: BTC оценивается в USDT. Если цена пары 60 000, это означает 60 000 USDT за 1 BTC."]],["Market и Limit",["Market (рыночная) — купить или продать сейчас по лучшим доступным ценам. Исполнение обычно быстрое, но итоговая цена может отличаться от увиденной секунду назад.","Limit (лимитная) — указать цену, по которой ты согласен купить или продать. Исполнение не гарантировано: рынок может не дойти до цены или не найти встречный объём."]],["Стакан и спред",["Стакан (order book) — список активных заявок покупателей и продавцов. Лучшая цена покупки — best bid, лучшая цена продажи — best ask. Разница между ними — спред.","Когда встречаются совместимые заявки, биржа исполняет их полностью или частично. Это называется сопоставлением заявок (matching)."]],["Пример",["BTC условно стоит около 60 000 USDT. Ты ставишь лимитную заявку купить по 59 500. Пока продавец не согласится на 59 500 или дешевле, сделка не состоится. Если цена уйдёт вверх, заявка может остаться неисполненной."]]],analogy:"Представь очередь на рынке: покупатель готов заплатить не больше 95 рублей, продавец хочет не меньше 100. Пока условия не совпали, обмена нет.",q:"Чем лимитная заявка отличается от рыночной?",a:["Всегда исполняется мгновенно","Задаёт желаемую цену, но исполнение не гарантировано","Не попадает на биржу"],ok:1,why:"Лимитная заявка задаёт желаемую цену. Для сделки нужен встречный участник по этой цене или лучше."},
+{title:"Почему цена движется",intro:"Как спрос, предложение, ликвидность и волатильность влияют на цену.",blocks:[["Цена сделки и движение рынка",["Цена последней сделки — цена, по которой недавно встретились покупатель и продавец. Если покупатели активно забирают предложения продавцов по всё более высоким ценам, сделки могут проходить выше.","Само по себе число желающих купить не гарантирует рост. Важно, насколько активно они покупают и какой объём встречных заявок доступен."]],["Что делают покупатели и продавцы",["Агрессивные покупатели забирают доступные предложения на продажу. Если ближайшего объёма мало, следующие предложения могут быть дороже.","Агрессивные продавцы продают в заявки покупателей. Если ближайшего объёма мало, следующие цены покупки могут быть ниже."]],["Ликвидность и волатильность",["Ликвидность — насколько легко купить или продать актив без сильного влияния на цену. В ликвидном рынке обычно много заявок и сравнительно небольшой спред.","Волатильность — насколько сильно и быстро меняется цена. При низкой ликвидности крупная рыночная заявка может заметно сдвинуть цену. Новости и паника тоже могут усиливать движения."]],["Наглядный сценарий",["В стакане рядом с текущей ценой мало заявок на продажу. Крупная рыночная покупка выбирает их одну за другой. Чтобы купить весь объём, покупателю приходится соглашаться на более высокие цены."]]],analogy:"Как на аукционе: если покупатели перебивают ставки друг друга, цена растёт. Если желающих купить мало, продавцу приходится снижать цену.",q:"Что может произойти, если крупная рыночная покупка встретит мало заявок на продажу?",a:["Она может пройти по нескольким более высоким ценам","Цена обязательно останется прежней","Биржа отменит все заявки"],ok:0,why:"Рыночная покупка забирает доступные предложения. Если объёма рядом мало, исполнение может пройти по более высоким ценам."},
+{title:"Как трейдер получает прибыль",intro:"Считаем прибыль и убыток, учитываем комиссии и не путаем win rate с результатом.",blocks:[["Результат сделки",["Для простой спотовой покупки результат до комиссий — стоимость продажи минус стоимость покупки. Купил на 200 USDT и продал на 210 USDT — результат +10 USDT.","Если продал на 190 USDT, результат −10 USDT. Пока актив не продан, изменение стоимости позиции — нереализованный результат. После продажи он становится реализованным."]],["Проценты и комиссии",["Доходность в процентах = результат ÷ сумма покупки × 100%. Например, +10 USDT от покупки на 200 USDT — это +5% до комиссий.","Комиссии могут взиматься при покупке и продаже. Спред и проскальзывание — разница между ожидаемой и фактической ценой исполнения — тоже влияют на итог."]],["Почему win rate не всё",["Win rate — доля прибыльных сделок. Можно часто выигрывать понемногу и редко терять очень много. И наоборот: прибыльных сделок может быть меньше половины, но средняя прибыль перекрывает средний убыток.","Смотри на средний выигрыш, средний проигрыш, комиссии и общий результат серии сделок, а не только на количество удачных входов."]],["Расчёт на цифрах",["Покупка на 200 USDT. Продажа на 210 USDT. Допустим, суммарные комиссии в условном примере — 0,4 USDT. Чистый результат: 210 − 200 − 0,4 = 9,6 USDT, или 4,8% от суммы покупки."]]],analogy:"Как при покупке товара: учитывай не только цену, но и доставку и другие расходы. На бирже комиссии и качество исполнения — часть результата.",q:"Купил на 200 USDT, продал на 210 USDT, комиссии составили 1 USDT. Итог?",a:["+10 USDT","+9 USDT","+11 USDT"],ok:1,why:"210 − 200 − 1 = 9 USDT. Комиссии уменьшают прибыль."},
+{title:"Кто участвует в рынке",intro:"У частных трейдеров, инвесторов, маркет-мейкеров и бирж разные задачи.",blocks:[["Розничные трейдеры",["Это частные люди, торгующие собственными средствами. У них разные стратегии, размеры капитала и сроки удержания позиции. Нельзя считать, что все частные трейдеры действуют одинаково."]],["Инвесторы",["Инвесторы обычно оценивают актив на более длинном горизонте. Они могут покупать не ради движения в ближайшие минуты, а исходя из ожиданий на месяцы или годы. Их сделки тоже влияют на спрос и предложение."]],["Маркет-мейкеры и крупные участники",["Маркет-мейкеры выставляют заявки на покупку и продажу, помогая поддерживать ликвидность. Они управляют риском и могут зарабатывать на спреде и других механизмах.","Крупные фонды и другие участники могут совершать объёмные сделки. Но не каждая крупная сделка означает манипуляцию или точный сигнал для остальных."]],["Биржа",["Биржа предоставляет инфраструктуру: принимает заявки, сопоставляет их, учитывает сделки и устанавливает правила торгов. Это площадка со своими комиссиями и рисками, а не гарант прибыли."]]],analogy:"На большом рынке есть покупатели для себя, оптовики, посредники и организатор площадки. Все участвуют в обмене, но преследуют разные цели.",q:"Какова одна из основных функций маркет-мейкера?",a:["Гарантировать рост цены","Поддерживать ликвидность, выставляя заявки покупки и продажи","Предсказывать цену без риска"],ok:1,why:"Маркет-мейкер помогает рынку оставаться ликвидным, размещая заявки с обеих сторон. Это не гарантирует безрисковую прибыль."},
+{title:"Спот, маржа и фьючерсы",intro:"Разберём инструменты и риски. Для начала сосредоточимся на спотовой торговле.",blocks:[["Спотовая торговля",["На споте ты покупаешь сам актив за имеющиеся средства. Купил BTC за USDT — у тебя появился BTC. Стоимость позиции меняется вместе с рыночной ценой.","Если цена упала, стоимость актива в USDT снизилась, но актив остаётся у тебя, пока ты его не продал. Спот тоже рискованный: цена может сильно упасть, а биржа и хранение несут отдельные риски."]],["Маржинальная торговля",["Маржа позволяет использовать заёмные средства. Это увеличивает размер позиции относительно собственного капитала, а значит усиливает и прибыль, и убыток.","При неблагоприятном движении биржа может ликвидировать позицию, чтобы закрыть долг. Плечо не является безопасным способом ускорить заработок."]],["Фьючерсы, лонг и шорт",["Фьючерс — контракт, стоимость которого связана с базовым активом. Лонг — расчёт на рост, шорт — на снижение. Это не то же самое, что просто купить монету на споте.","У фьючерсов могут быть плечо, маржа, funding rate у бессрочных контрактов и ликвидация. Условия зависят от биржи и типа контракта."]],["Что изучаем сейчас",["В этом курсе спот — базовый инструмент. Сначала важно понять покупку, продажу, цену, комиссию и риск. Маржу и фьючерсы достаточно распознавать и понимать их опасности — практиковать их сейчас не требуется."]]],analogy:"Спот — купить велосипед и владеть им. Маржа — купить его, заняв часть денег. Фьючерс — контракт, результат которого зависит от будущей цены велосипеда.",q:"Что происходит при обычной покупке BTC на споте без заёмных средств?",a:["Ты покупаешь сам BTC за имеющиеся средства","Автоматически открываешь фьючерс","Биржа выдаёт тебе кредит"],ok:0,why:"На споте ты приобретаешь сам актив. Обычная спотовая покупка без займа не использует плечо."},
+{title:"Как трейдер принимает решения",intro:"Торговая идея, сценарий, вероятность и оценка возможного убытка.",blocks:[["Сделка начинается не с кнопки Buy",["Перед сделкой трейдер формулирует идею: что должно произойти и почему? Например, цена удерживает область, покупатели проявляют активность, и есть сценарий продолжения роста. Это гипотеза, а не факт.","Если ты не можешь объяснить, почему рассматриваешь сделку, где идея перестанет быть актуальной и какой убыток допустим, решение ещё не подготовлено."]],["Сценарий и неопределённость",["План включает условие входа, условие выхода при ошибке, цель или логику фиксации результата. Ни один сигнал не гарантирует исход. Даже подготовленная сделка может закрыться в минус.","Оценивай не только возможную прибыль, но и возможный убыток. Не используй деньги, потеря которых повлияет на обязательные расходы."]],["Вероятность важнее уверенности",["Трейдер работает с вероятностями. Отдельная сделка может оказаться убыточной, даже если у подхода есть преимущество на большой серии сделок.","Дисциплина — следовать заранее определённым правилам, фиксировать результаты и не увеличивать риск из-за желания отыграться. Иногда отсутствие сделки — полноценное решение."]],["Подготовка к графикам",["Следующий логичный шаг — изучить свечи, таймфреймы, тренд, уровни и объём. График не предсказывает будущее, но помогает структурировать наблюдения и проверять торговую идею."]]],analogy:"Как перед поездкой: выбираешь маршрут, знаешь запасной путь и понимаешь, где развернёшься, если дорога перекрыта. Пробки не исключить, но можно подготовиться.",q:"Что стоит определить до открытия сделки?",a:["Только сколько можно заработать в идеальном случае","Почему вхожу, где признаю ошибку и сколько готов потерять","Как быстро цена точно вырастет"],ok:1,why:"План должен включать обоснование, условие отмены идеи и оценку риска. Будущая цена неизвестна."}
 ];
-
-const list = document.querySelector("#exercise-list");
-const search = document.querySelector("#search");
-const dialog = document.querySelector("#exercise-dialog");
-
-function renderExercises(items) {
-  list.innerHTML = "";
-  if (!items.length) {
-    list.innerHTML = '<div class="empty">Ничего не найдено</div>';
-    return;
-  }
-
-  items.forEach((exercise) => {
-    const card = document.createElement("article");
-    card.className = "exercise-card";
-    card.tabIndex = 0;
-    card.innerHTML = `
-      <span class="exercise-card-number">Упражнение ${exercise.id}</span>
-      <h2>${exercise.title}</h2>
-      <p>${exercise.description.slice(0, 95)}…</p>
-    `;
-    card.addEventListener("click", () => openExercise(exercise));
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") openExercise(exercise);
-    });
-    list.appendChild(card);
-  });
-}
-
-function openExercise(exercise) {
-  document.querySelector("#dialog-number").textContent = `Упражнение ${exercise.id}`;
-  document.querySelector("#dialog-title").textContent = exercise.title;
-  document.querySelector("#dialog-description").textContent = exercise.description;
-  dialog.dataset.exerciseId = exercise.id;
-  dialog.showModal();
-}
-
-search.addEventListener("input", () => {
-  const query = search.value.trim().toLowerCase();
-  renderExercises(exercises.filter((exercise) =>
-    exercise.title.toLowerCase().includes(query) || exercise.id.includes(query)
-  ));
-});
-
-document.querySelector(".dialog-close").addEventListener("click", () => dialog.close());
-dialog.addEventListener("click", (event) => {
-  if (event.target === dialog) dialog.close();
-});
-
-document.querySelector(".dialog-calc-btn").addEventListener("click", () => {
-  const id = dialog.dataset.exerciseId;
-  dialog.close();
-  switchView("calculator");
-  document.querySelector("#calc-exercise").value = id;
-});
-
-const calcSelect = document.querySelector("#calc-exercise");
-exercises.forEach((exercise) => {
-  const option = document.createElement("option");
-  option.value = exercise.id;
-  option.textContent = `${exercise.id} — ${exercise.title}`;
-  calcSelect.appendChild(option);
-});
-
-function switchView(viewName) {
-  document.querySelectorAll(".view").forEach((view) => view.classList.remove("active"));
-  document.querySelector(`#${viewName}-view`).classList.add("active");
-  document.querySelectorAll(".nav-btn").forEach((button) => {
-    button.classList.toggle("active", button.dataset.view === viewName);
-  });
-}
-
-document.querySelectorAll(".nav-btn").forEach((button) => {
-  button.addEventListener("click", () => switchView(button.dataset.view));
-});
-
-document.querySelector("#calculate").addEventListener("click", () => {
-  const exercise = exercises.find((item) => item.id === calcSelect.value);
-  const raw = Number(document.querySelector("#calc-result").value);
-  const output = document.querySelector("#calc-output");
-
-  if (!Number.isFinite(raw) || raw < 0) {
-    output.hidden = false;
-    output.innerHTML = "Введите корректный результат.";
-    return;
-  }
-
-  let points;
-  if (exercise.mode === "lower") {
-    if (raw <= exercise.thresholds[0]) points = 100;
-    else if (raw <= exercise.thresholds[1]) points = 75;
-    else if (raw <= exercise.thresholds[2]) points = 50;
-    else points = 25;
-  } else {
-    if (raw >= exercise.thresholds[0]) points = 100;
-    else if (raw >= exercise.thresholds[1]) points = 75;
-    else if (raw >= exercise.thresholds[2]) points = 50;
-    else points = 25;
-  }
-
-  output.hidden = false;
-  output.innerHTML = `
-    <span>Демонстрационная оценка</span>
-    <strong>${points} баллов</strong>
-    <p>${raw} ${exercise.unit} — ${exercise.title}</p>
-  `;
-});
-
-renderExercises(exercises);
+const KEY="trading-school-progress-v1";let progress=readProgress(),active=1;
+function readProgress(){try{return JSON.parse(localStorage.getItem(KEY))||{done:[],answers:{}}}catch{return{done:[],answers:{}}}}
+function persist(){localStorage.setItem(KEY,JSON.stringify(progress));renderProgress();renderNavigation();renderCards()}
+function unlocked(i){return i===0||progress.done.includes(i-1)}
+function renderProgress(){const n=progress.done.length,p=Math.round(n/7*100);["percent","side-percent"].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=p+"%"});["bar","side-bar"].forEach(id=>{const e=document.getElementById(id);if(e)e.style.width=p+"%"});const count=document.getElementById("completed-count");if(count)count.textContent=n+" из 7 уроков завершено"}
+function renderNavigation(){const nav=document.getElementById("lesson-nav");if(!nav)return;nav.innerHTML=lessons.map((l,i)=>'<button class="nav-lesson '+(active===i?"active ":"")+(progress.done.includes(i)?"done ":"")+(unlocked(i)?"":"locked")+'" data-i="'+i+'" '+(unlocked(i)?"":"disabled")+'><span class="nav-number">'+(progress.done.includes(i)?"✓":String(i+1).padStart(2,"0"))+'</span><span class="nav-title">'+l.title+'</span></button>').join("");nav.querySelectorAll("button:not(:disabled)").forEach(b=>b.onclick=()=>openLesson(+b.dataset.i))}
+function renderCards(){const grid=document.getElementById("lesson-grid");if(!grid)return;grid.innerHTML=lessons.map((l,i)=>'<article class="lesson-card '+(progress.done.includes(i)?"done ":"")+(unlocked(i)?"":"locked")+'" data-i="'+i+'" '+(unlocked(i)?'tabindex="0"':'')+'><div class="lesson-index">'+(progress.done.includes(i)?"✓":String(i+1).padStart(2,"0"))+'</div><div class="lesson-info"><span class="tag">'+(progress.done.includes(i)?"ЗАВЕРШЁН":unlocked(i)?"УРОК "+String(i+1).padStart(2,"0"):"ЗАКРЫТ")+' · 6–8 МИН</span><h3>'+l.title+'</h3><p>'+l.intro+'</p></div><span class="lesson-arrow">'+(unlocked(i)?"→":"⌑")+'</span></article>').join("");grid.querySelectorAll(".lesson-card:not(.locked)").forEach(c=>c.onclick=()=>openLesson(+c.dataset.i))}
+function home(){document.getElementById("content").innerHTML=homeHTML;bindHome();renderProgress();renderNavigation();renderCards();window.scrollTo(0,0)}
+const homeHTML=document.getElementById("content").innerHTML;
+function bindHome(){const m=document.getElementById("menu-toggle");if(m)m.onclick=()=>document.getElementById("sidebar").classList.toggle("open")}
+function openLesson(i){if(!unlocked(i))return;active=i;const l=lessons[i],saved=progress.answers[i];const blocks=l.blocks.map((b,n)=>'<section class="lesson-section"><h2><span style="color:var(--accent)">0'+(n+1)+' </span>'+b[0]+'</h2>'+b[1].map(p=>'<p>'+p+'</p>').join("")+'</section>').join("");document.getElementById("content").innerHTML='<div class="lesson-layout"><button class="back-link" id="back">← К программе обучения</button><header class="lesson-hero"><div class="eyebrow">БЛОК 01 / УРОК '+String(i+1).padStart(2,"0")+'</div><h1>'+l.title+'</h1><p>'+l.intro+'</p></header><div class="lesson-body">'+blocks+'<section class="lesson-section"><h2>Объяснение на простом примере</h2><div class="analogy">'+l.analogy+'</div></section><section class="practice-card"><div class="practice-kicker">✦ ПРОВЕРЬ ПОНИМАНИЕ</div><h2>Небольшая практика</h2><div class="question">'+l.q+'</div><div class="answers">'+l.a.map((a,n)=>'<button class="answer-option" data-n="'+n+'">'+String.fromCharCode(65+n)+". "+a+'</button>').join("")+'</div><div class="feedback" id="feedback"></div></section><div class="lesson-actions"><button class="secondary-btn" id="all-lessons">← Все уроки</button><button class="primary-btn" id="next" disabled>'+(i===6?"Завершить блок":"Завершить урок и продолжить")+' →</button></div></div></div>';document.getElementById("back").onclick=home;document.getElementById("all-lessons").onclick=home;const next=document.getElementById("next");if(saved===l.ok){showCorrect(l);next.disabled=false}document.querySelectorAll(".answer-option").forEach(b=>b.onclick=()=>{const n=+b.dataset.n;if(n===l.ok){progress.answers[i]=n;if(!progress.done.includes(i))progress.done.push(i);persist();showCorrect(l);next.disabled=false}else{b.classList.add("wrong");const f=document.getElementById("feedback");f.className="feedback show bad";f.textContent="Пока неверно. "+l.why+" Попробуй ещё раз.";}});next.onclick=()=>{if(progress.answers[i]!==l.ok)return;if(i===6)finalScreen();else openLesson(i+1)};renderNavigation();window.scrollTo(0,0)}
+function showCorrect(l){document.querySelectorAll(".answer-option").forEach((b,n)=>{b.disabled=true;if(n===l.ok)b.classList.add("correct")});const f=document.getElementById("feedback");f.className="feedback show good";f.textContent="Верно. "+l.why}
+function finalScreen(){document.getElementById("content").innerHTML='<div class="lesson-layout"><button class="back-link" id="back">← К программе обучения</button><section class="final-result"><div class="eyebrow">БЛОК 01 · ЗАВЕРШЁН</div><h2>Ты освоил основы трейдинга</h2><p>Ты разобрался, как устроена биржа, почему меняется цена, как рассчитывается результат сделки, чем отличаются инструменты и почему важно заранее оценивать риск.</p><p><strong>Блок 1 завершён. Ты освоил основы трейдинга и готов перейти к изучению графиков.</strong></p><button class="primary-btn" id="finish">Вернуться к программе</button></section></div>';document.getElementById("back").onclick=home;document.getElementById("finish").onclick=home;renderProgress()}
+bindHome();renderProgress();renderNavigation();renderCards();
