@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e13">
+  <meta name="description" content="TRADING SCHOOL — интерактивный курс основ трейдинга для начинающих.">
+  <title>TRADING SCHOOL — Основы трейдинга</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="TRADING SCHOOL">
+        <span class="brand-mark">T<span>.</span></span>
+        <span class="brand-name">TRADING <b>SCHOOL</b><small>LEARN THE MARKET</small></span>
+      </a>
+      <div class="sidebar-label">ОБУЧЕНИЕ</div>
+      <nav id="lesson-nav" class="lesson-nav" aria-label="Уроки"></nav>
+      <div class="sidebar-bottom">
+        <div class="mini-progress"><div class="mini-progress-top"><span>ТВОЙ ПРОГРЕСС</span><b id="side-percent">0%</b></div><div class="progress-track"><i id="side-progress"></i></div></div>
+        <div class="sidebar-note"><span class="note-dot"></span> Учись в своём темпе</div>
+      </div>
+    </aside>
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu icon-button" id="menu-toggle" aria-label="Открыть меню">☰</button>
+        <div class="breadcrumb">ТВОЯ ПРОГРАММА <span>/</span> <b>БЛОК 01</b></div>
+        <div class="topbar-right"><span class="level-pill"><i></i> НАЧАЛЬНЫЙ УРОВЕНЬ</span><div class="avatar">TS</div></div>
+      </header>
+      <div class="content-wrap" id="content">
+        <section class="welcome-panel">
+          <div class="welcome-copy"><div class="eyebrow"><span></span> ТВОЯ ТОЧКА СТАРТА</div><h1>Разберись в рынке.<br><em>Без сложных слов.</em></h1><p>Пойми, как устроен трейдинг, откуда берутся цены и как не принимать решения наугад.</p><div class="welcome-meta"><span>◷ 7 коротких уроков</span><span>◇ Практика внутри</span><span>↗ Без реальных сделок</span></div></div>
+          <div class="market-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-line"></div><div class="art-candle c1"></div><div class="art-candle c2"></div><div class="art-candle c3"></div><div class="art-candle c4"></div><div class="art-candle c5"></div><div class="art-caption">MARKET<br><b>01 / 07</b></div><div class="art-glow"></div></div>
+        </section>
+        <section class="dashboard-row">
+          <div class="progress-card"><div class="card-kicker">ТВОЙ ПРОГРЕСС</div><div class="progress-main"><strong id="main-percent">0%</strong><span id="progress-caption">Начни с первого урока</span></div><div class="progress-track large"><i id="main-progress"></i></div><div class="progress-foot"><span id="completed-count">0 из 7 уроков завершено</span><span>БЛОК 01</span></div></div>
+          <div class="goal-card"><div class="goal-icon">✦</div><div><div class="card-kicker">ЦЕЛЬ БЛОКА</div><strong>Понимать, что происходит на рынке</strong><p>Не угадывать цену, а понимать механику.</p></div></div>
+        </section>
+        <section class="section-heading"><div><div class="eyebrow">ПРОГРАММА ОБУЧЕНИЯ</div><h2>Основы трейдинга</h2><p>Проходи уроки по порядку. Каждый следующий откроется после проверки знаний.</p></div><span class="section-count">01 — 07</span></section>
+        <section class="lesson-grid" id="lesson-grid"></section>
+        <footer class="app-footer"><span>TRADING SCHOOL <b>·</b> BLOCK 01</span><span>Обучение, а не финансовая рекомендация</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
